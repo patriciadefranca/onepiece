@@ -1,0 +1,12 @@
+* { /*seletor universal será aplicado no index inteiro*/
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; /*ajuda trabalhar com larguras e alturas */
+
+}
+
+ul{
+    list-style: none; /*tira as bolinhas padrão das listas */
+}
+
+/*aqui resetamos as configurações padrões */

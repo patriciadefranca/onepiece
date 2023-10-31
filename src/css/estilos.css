@@ -1,0 +1,99 @@
+body {
+    background-color: black;
+    overflow: hidden; /*esconde tudo que estiver sobrando na vertical */
+}
+
+main ::after {
+    /*content: "";*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;/*criando o degrade não funcionou*/
+}
+
+.personagem {
+    display: none; /*escondendo as imagens*/
+    height: 100vh; /*100% da altura do dispositivo que a pessoa está usando*/
+}
+
+.personagem.selecionado {
+    display: block; /*apresentando a imagem */
+}
+
+main .personagem .imagem {
+    width: 100%; /*ele usa todo o tamanho que tem para ocupar*/
+    height: 100%; /*ocupa toda altura disponivel*/
+    object-fit: cover; /*mantem as dimensões corretas e cobre o elemento*/
+
+}
+
+.conteudo {
+    /*configurando o texto*/
+position: absolute; /*destaca ele por cima do elemento aqui ele ficara em cima da imagem */
+top: 0px; /*define onde ele vai ficar */
+left: 120px; /*afastou da esquerda*/
+display: flex; 
+flex-direction: column; /*deixa o texto um embaixo do outro*/
+justify-content: center; /* centralizando o conteudo verticalment importante para centralizar ele precisa de espaço tem que fazer a config abaixo*/
+min-height: 100vh;
+max-width: 380px;
+z-index: 1; /*o elemento fica por cima*/
+
+}
+
+.conteudo .nome-personagem {
+    color: white;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px; /*espaço embaixo entre o próximo elemento*/
+}
+
+.conteudo .descricao {
+    color: white;
+    font-family: "Rubik";
+    line-height: 24px; /*altura entre as linhas */
+}
+
+.conteudo .logo {
+    background-image: url("../imagens/one-piece-logo.png");
+    background-size: cover;
+    /*colocando imagem de fundo*/
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /*espaço entre os botões porém so se usar o flex */
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: black;
+    cursor: pointer; /*faz a mão que mostra que é clicavel */
+    border-radius: 50%;
+
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+}
+
+.botoes .botao .selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9;
+}
